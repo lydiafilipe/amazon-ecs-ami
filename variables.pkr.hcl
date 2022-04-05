@@ -15,7 +15,7 @@ locals {
 variable "ami_name_prefix_al2" {
   type        = string
   description = "Outputted AMI name prefix."
-  default     = "unofficial-amzn2-ami-ecs"
+  default     = "fillydia-test-ami"
 }
 
 variable "ami_version" {

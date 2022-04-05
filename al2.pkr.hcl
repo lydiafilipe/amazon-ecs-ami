@@ -40,6 +40,11 @@ build {
   ]
 
   provisioner "file" {
+    source      = "ecs-init.rpm"
+    destination = "/tmp/ecs-init.rpm"
+  }
+
+  provisioner "file" {
     source      = "files/90_ecs.cfg.amzn2"
     destination = "/tmp/90_ecs.cfg"
   }

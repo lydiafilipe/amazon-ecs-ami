@@ -87,10 +87,15 @@ build {
     destination = "/tmp/additional-packages"
   }
 
+  provisioner "file" {
+    source      = "ecs-init.rpm"
+    destination = "/tmp/ecs-init.rpm"
+  }
+
   provisioner "shell" {
     inline_shebang = "/bin/sh -ex"
     inline = [
-      "sudo yum install -y docker-${var.docker_version_al1} ecs-init-${var.ecs_version_al1} ${local.packages_al1}"
+      "sudo yum install -y docker-${var.docker_version_al1} /tmp/ecs-init.rpm ${local.packages_al1}"
     ]
   }
 
